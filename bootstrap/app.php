@@ -41,6 +41,13 @@ $app->singleton(
     App\Exceptions\Handler::class
 );
 
+# new storage path
+# base_path() -> returns root path
+$path_storage = base_path() . "/public/storage";
+
+# override already $app->storagePath using the function
+$app->useStoragePath($path_storage);
+
 /*
 |--------------------------------------------------------------------------
 | Return The Application
